@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    
+    <div class="container col-md-10" style="border-radius: 10px;background-color: white; margin-top: 50px;">
+        <div class="row">
+            <div style="padding-top: 20px;  padding-bottom: 20px;" class="row col-md-3">
+                <img src="https://universidadesgratuitas.com/wp-content/uploads/2018/10/Universidad-Tecnol%C3%B3gica-de-Aguascalientes.png" alt="que pedo" style="padding-left: 40px" height="100px" width="300px">
+            </div>
+            <div class="row col"  style="text-align: right; padding-top: 50px; padding-right: 40px;">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card col-md-4 mx-auto mt-5" style="margin-bottom: 50px ;background-color: #00ab84;" id="nickWrap">
+        <p id="nickError"></p>
+        <div style="height: 500px;display: flex; justify-content: center; align-items: center;" class="card-body">
+            <form id="nickForm">
+                <div class="row" style="display: flex; justify-content: center; align-items: center;">
+                    <img src="./img/Logo2.png" alt="imagen uta" style="margin-bottom: 50px;width:auto; height:100px">
+                    <h4 style="text-align: center; color: white;">Ingrese con su matricula</h4>
+                    <input style="width: 300px;" type="number" id="nickname" class="form-control">
+                    <div class="row" style="display: flex; justify-content: center; align-items: center;">
+                        <button type="submit" style="background-color: #008164; width: 300px;" class="btn btn-success mt-3" >
+                            <ion-icon name="send-outline"></ion-icon> Enviar </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" style="border-radius: 10px;background-color: white; margin-top: 50px; padding: 50px;" id="contentWrap">
+        <div class="row mt-2">
+            <div class="col-md-6 offset-md-1">
+                <div class="card">
+                    <div class="card-header" style="background-color: #00ab84;">
+                        <g4>Este es el chat en vivo</g4>
+                    </div>
+                    <div id="chat" class="card-body"></div>
+                    <form id="message-form" class="card-footer">
+                        <div class="input-group">
+                            <input type="text" id="message" class="form-control">
+                            <div class="input-group-append" >
+                                <button type="submit" style="background-color: #008164" class="btn btn-success">
+                                    <ion-icon name="send-outline"></ion-icon>Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3" style="padding-left: 40px;">
+                <div style="padding-top: 45px;" class="col-md-12">
+                    <div class="card">
+                        <div style="background-color: #00ab84" class="card-header">
+                            <h3>Usuarios</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="usernames"></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding-top: 45px;" class="col-md-12">
+                    <div class="card">
+                        <div style="background-color: #00ab84" class="card-header">
+                            <h3>Comandos</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Mensaje privado: "/W (Matricula_Destinatario) (Mensaje)"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

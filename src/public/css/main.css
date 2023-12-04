@@ -1,0 +1,22 @@
+body {
+  background-color: #cecece;
+  height: calc(100vh - 60px);
+}
+
+#contentWrap {
+  display: none;
+}
+
+.chat {
+  height: 35rem;
+  overflow-y: scroll;
+}
+
+.error {
+  color: red;
+}
+
+.whisper {
+  color: gray;
+  font-style: italic;
+}
